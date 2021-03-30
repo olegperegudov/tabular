@@ -1,2 +1,5 @@
-input
-models
+# input data
+input/*.csv
+
+# models: trained models
+models/*.bin

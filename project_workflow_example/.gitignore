@@ -1,5 +1,5 @@
 # input data
 input/*.csv
 
-# models: trained models
+# trained models
 models/*.bin

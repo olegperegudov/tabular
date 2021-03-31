@@ -6,6 +6,5 @@ input/*.csv
 # trained models @ ../models
 models/*.bin
 
-# helper code & debugger @ ../src
-src/debugger.py
-
+# helper code & debugger @ ../
+debugger.py

@@ -6,18 +6,11 @@ import os
 from pathlib import Path
 import config
 
-# main working dir
-PROJECT_DIR = Path.cwd().parent
-# input folder
-input_path = os.path.join(PROJECT_DIR, 'input')
-data_path = os.path.join(input_path, 'mnist_train_folds.csv')
-# models folder
-model_path = os.path.join(PROJECT_DIR, 'models')
-
 
 def run(fold):
+    print(f'Started training {fold}th fold...')
     # read the training data with folds
-    df = pd.read_csv(data_path)
+    df = pd.read_csv(config.TRAINING_FILE)
     # training data is where kfold is not equal to provided fold
     # also, note that we reset the index
     df_train = df[df.kfold != fold].reset_index(drop=True)
@@ -41,12 +34,13 @@ def run(fold):
     accuracy = metrics.accuracy_score(y_valid, preds)
     print(f"Fold={fold}, Accuracy={round(accuracy, 3)}")
     # save the model
-    joblib.dump(clf, os.path.join(model_path, 'dt_' + str(fold) + '.bin'))
+    joblib.dump(clf, os.path.join(
+        config.MODEL_OUTPUT, 'dt_' + str(fold) + '.bin'))
 
 
 if __name__ == "__main__":
     run(fold=0)
     run(fold=1)
-    run(fold=2)
-    run(fold=3)
-    run(fold=4)
+    # run(fold=2)
+    # run(fold=3)
+    # run(fold=4)

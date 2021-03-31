@@ -1,5 +1,11 @@
-# input data
+# everything is contained inside project_dir = ../
+
+# working data @ ../input
 input/*.csv
 
-# trained models
+# trained models @ ../models
 models/*.bin
+
+# helper code & debugger @ ../src
+src/debugger.py
+

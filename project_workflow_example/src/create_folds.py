@@ -3,10 +3,6 @@ from sklearn.model_selection import KFold
 from pathlib import Path
 import os
 
-# root = os.path.abspath('test_mnist_project\input')
-# df_path = os.path.join(root, 'mnist_train.csv')
-# new_df_path = os.path.join(root, 'mnist_train_folds.csv')
-
 PROJECT_DIR = Path.cwd().parent
 
 input_path = os.path.join(PROJECT_DIR, 'input')

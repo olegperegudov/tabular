@@ -1,6 +1,6 @@
 # everything is contained inside project_dir = ../
 
-# working data @ ../input
+# various working data @ ../input
 input/*.csv
 
 # trained models @ ../models

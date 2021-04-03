@@ -10,7 +10,6 @@ df_path = os.path.join(input_path, 'mnist_train.csv')
 new_df_path = os.path.join(input_path, 'mnist_train_folds.csv')
 
 
-# def create_folds(n_splits, root, df_path, new_df_path, rewrite=False, shuffle=True):
 def create_folds(n_splits, rewrite=False, shuffle=True):
     """Makes a copy of mnist_train.csv with extra column at the end - "kfolds"
        and set fold's number in it.
@@ -24,8 +23,6 @@ def create_folds(n_splits, rewrite=False, shuffle=True):
     """
     # read df
     df = pd.read_csv(df_path)
-    # make extra col to fill in later
-    # df['kfold'] = None
 
     kf = KFold(n_splits=n_splits, shuffle=shuffle, random_state=1)
 
